@@ -40,7 +40,7 @@ Explore Spotlight: <a href="http://34.81.192.14" target="_blank">http://34.81.19
 
   Spotlight supports Responsive Web Design that you can view profile easily on the phone.
 
-  <img src="https://i.imgur.com/RKB0BAF.png" alt="Imgur" style="max-width: 35%;" />
+  <img src="https://i.imgur.com/RKB0BAF.png" alt="Imgur" height="400" />
 
 ## Tech Stack
 
