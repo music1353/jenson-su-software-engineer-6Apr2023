@@ -1,0 +1,45 @@
+.auth-modal {
+  width: 400px !important;
+  max-width: 95vw;
+
+  .modal-header {
+    .header__title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-align: center;
+    }
+    
+    .header__text {
+      width: 250px;
+      color: $secondary-text-color;
+      font-size: 1rem;
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+
+  .modal-body {
+    padding: 20px 0;
+
+    .body__btn {
+      height: 44px;
+      width: 100%;
+      font-weight: 500;
+      font-size: 1rem;
+      margin: 8px 0;
+
+      .btn-icon {
+        position: absolute;
+        left: 20px;
+        height: 24px;
+        width: 24px;
+      }
+    }
+  }
+
+  .modal-footer {
+    font-size: .9rem;
+    color: $regular-text-color;
+    text-align: center;
+  }
+}

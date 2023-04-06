@@ -1,0 +1,58 @@
+.profile-setting-modal {
+  width: 480px;
+  max-width: 95vw;
+
+  .modal-header {
+    .header__title {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+  }
+
+  .modal-body {
+    padding: 16px 0;
+
+    .body-item {
+      .item__title {
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin-bottom: 12px;
+      }
+
+      .item__content {
+        .content-radio {
+          .radio-option {
+            padding: 4px 0;
+
+            .option-icon {
+              width: 60px;
+              display: flex;
+              align-self: center;
+              justify-content: center;
+              font-size: 1.2rem;
+              padding: 8px;
+            }
+
+            .option-description {
+              .description__title {
+                font-size: 1rem;
+                font-weight: 500;
+              }
+  
+              .description__text {
+                color: $regular-text-color;
+                line-height: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .body--divider {
+      border: 0;
+      border-top: 1px solid $base-border-color;
+      margin: 16px 0;
+    }
+  }
+}

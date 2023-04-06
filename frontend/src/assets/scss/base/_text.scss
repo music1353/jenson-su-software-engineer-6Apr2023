@@ -1,0 +1,11 @@
+// 超過隱藏內容
+@each $var in $ellipsis-scales {
+  .ellipsis-#{$var} {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: normal !important;
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-line-clamp: $var !important; /*最多顯示幾行*/  
+  }
+}

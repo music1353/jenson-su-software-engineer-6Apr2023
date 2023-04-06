@@ -1,0 +1,91 @@
+version: "3.7"
+services:
+  frontend:
+    container_name: spotlight-frontend
+    image: music1353/spotlight-frontend:latest
+    restart: always
+    ports:
+      - "80:80"
+    environment:
+      - TZ=Asia/Taipei
+    logging:
+      options:
+        max-size: "50m"
+    depends_on:
+      - backend
+  backend:
+    container_name: spotlight-api
+    image: music1353/spotlight-api:latest
+    restart: always
+    ports:
+      - "5000:5000"
+    environment:
+      - TZ=Asia/Taipei
+    secrets:
+      - app_port
+      - app_session_secret
+      - db_host
+      - db_port
+      - db_username
+      - db_password
+      - db_name
+      - aws_region
+      - aws_access_key_id
+      - aws_secret_access_key
+      - aws_bucket_name
+    logging:
+      options:
+        max-size: "50m"
+    depends_on:
+      - db
+  db:
+    image: postgres:15.2-alpine
+    restart: always
+    environment:
+      POSTGRES_DB: spotlight
+      POSTGRES_USER: ${USER_NAME}
+      POSTGRES_PASSWORD: ${PASSWORD}
+      PGDATA: /var/lib/postgresql/data
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${USER_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PASSWORD}
+      PGADMIN_LISTEN_PORT: 80
+    ports:
+      - "8080:80"
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+  
+volumes:
+  db-data:
+  pgadmin-data:
+
+secrets:
+  app_port:
+    external: true
+  app_session_secret:
+    external: true
+  db_host:
+    external: true
+  db_port:
+    external: true
+  db_username:
+    external: true
+  db_password:
+    external: true
+  db_name:
+    external: true
+  aws_region:
+    external: true
+  aws_access_key_id:
+    external: true
+  aws_secret_access_key:
+    external: true
+  aws_bucket_name:
+    external: true

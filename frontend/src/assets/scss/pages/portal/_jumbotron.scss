@@ -1,0 +1,43 @@
+.portal-jumbotron {
+  height: calc(100vh - 64px);
+
+  .jumbotron-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .intro-header {
+      text-align: center;
+      max-width: 80%;
+
+      .header__title {
+        font-size: 4rem;
+        font-weight: 900;
+        line-height: 4.5rem;
+        margin-bottom: 24px;
+      }
+  
+      .header__description {
+        color: $secondary-text-color;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .jumbotron-arts {
+    display: none;
+
+    img {
+      height: 70vh;
+    }
+
+    /* md */
+    @media screen and (min-width: 970px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
