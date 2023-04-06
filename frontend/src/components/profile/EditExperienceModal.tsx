@@ -143,6 +143,8 @@ const EditExperienceModal: React.FC<Props> = ({ visible, mode, initialData, onCa
       } catch (error) {
         console.error(error);
         message.error("Update experience failed. Please try it again later");
+      } finally {
+        setLoading(false);
       }
     }
   }
