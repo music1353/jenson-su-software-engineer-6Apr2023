@@ -30,7 +30,12 @@ const SettingModal: React.FC<Props> = ({ visible, onCancel }) => {
 
   const [privacyPassCodeValue, setPrivacyPassCodeValue] = useState<string>(setting.passCode);
   const onPrivacyPassCodeInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPrivacyPassCodeValue(e.target.value);
+    const value = e.target.value;
+    const regex = /^\d+$/;
+    if (regex.test(value) || value === "") {
+      setPrivacyPassCodeValue(value);
+    }
+    
   }
 
   const { uid } = useSelector((state: RootState) => state.auth.user);
@@ -181,7 +186,8 @@ const SettingModal: React.FC<Props> = ({ visible, onCancel }) => {
                         value={privacyPassCodeValue}
                         onChange={onPrivacyPassCodeInputChange}
                         disabled={!privacyIsPublicValue}
-                        placeholder="your profile passcode"
+                        type="number"
+                        placeholder="Up to 6 digits passcode"
                         showCount
                         maxLength={6}
                       />

@@ -17,8 +17,15 @@ const PassBody: React.FC<Props> = ({ onSuccess }) => {
   const [form] = Form.useForm<FormType>();
 
   const onSubmit = async () => {
+    let values;
     try {
-      const values = await form.validateFields();
+      values = await form.validateFields();
+    } catch (error) {
+      console.error(error);
+      return
+    }
+
+    try {
       await v1Api.profile.pass({
         ...values,
         uid
@@ -52,19 +59,26 @@ const PassBody: React.FC<Props> = ({ onSuccess }) => {
                 {
                   required: true,
                   message: "Please input the passcode",
-                }
+                },
+                {
+                  max: 6,
+                  message: 'Passcode up to six digits at most.',
+                },
               ]}
               style={{ marginBottom: "0" }}
             >
               <Input
                 type="number"
                 size="large"
+                showCount
+                maxLength={6}
               />
             </Form.Item>
           </Form>
           
           <Button
             onClick={onSubmit}
+            className="body-btn"
             size="large"
             type="primary"
           >Go</Button>

@@ -203,7 +203,6 @@
         input {
           text-align: center;
           font-size: 1.45rem;
-          margin-bottom: 20px;
 
           &::-webkit-outer-spin-button,
           &::-webkit-inner-spin-button {
@@ -214,6 +213,10 @@
           &[type="number"] {
             -moz-appearance: textfield;
           }
+        }
+
+        .body-btn {
+          margin-top: 20px;
         }
       }
     }
