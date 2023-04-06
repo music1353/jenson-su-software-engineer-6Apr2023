@@ -4,7 +4,7 @@
 
 **Spotlight** is the simplest and trendiest profile generator made by Jenson.
 
-http://34.81.192.14
+Explore Spotlight: <a href="http://34.81.192.14" target="_blank">http://34.81.192.14</a>
 
 ## Table of Contents
 
@@ -40,7 +40,7 @@ http://34.81.192.14
 
   Spotlight supports Responsive Web Design that you can view profile easily on the phone.
 
-  <img src="https://i.imgur.com/RKB0BAF.png" alt="Imgur" style="zoom: 35%;" />
+  <img src="https://i.imgur.com/RKB0BAF.png" alt="Imgur" style="max-width: 35%;" />
 
 ## Tech Stack
 
