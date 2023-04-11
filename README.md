@@ -4,7 +4,7 @@
 
 **Spotlight** is the simplest and trendiest profile generator made by Jenson.
 
-Explore Spotlight: <a href="http://34.81.192.14" target="_blank">http://34.81.192.14</a>
+Explore Spotlight: <a href="http://35.221.133.49" target="_blank">http://35.221.133.49</a>
 
 ## Table of Contents
 
