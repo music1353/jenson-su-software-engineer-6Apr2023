@@ -24,6 +24,7 @@ const ProfileToolbar: React.FC = () => {
         className={`toolbar-btn ${ setting.isPublic ? "btn--public" : "" }`}
         type="text"
         icon={<PrivacyStatusIcon isPublic={setting.isPublic} />}
+        data-testid="toolbarButton"
       >{ setting.isPublic ? "Public" : "Private" }</Button>
 
       <SettingModal

@@ -97,6 +97,7 @@ const SettingModal: React.FC<Props> = ({ visible, onCancel }) => {
       onOk={handleSettingUpdate}
       className="profile-setting-modal"
       okText="Update"
+      data-testid="settingModal"
     >
       <div className="modal-header">
         <div className="header__title">Profile Setting</div>

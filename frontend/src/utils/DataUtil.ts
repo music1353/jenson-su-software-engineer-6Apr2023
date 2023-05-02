@@ -40,13 +40,16 @@ export default class DateUtil {
     const start = dayjs(`${startYear}-${startMonth}-01`);
     const end = isPresent ? dayjs() : dayjs(`${endYear}-${endMonth}-01`);
     const diff = dayjs.duration(end.diff(start));
+
     const years = Math.floor(diff.asYears());
     const months = diff.months();
 
     const yearText = years===1 ? "year" : "years";
     const monthText = months===1 ? "month" : "months";
 
-    if (years > 0) {
+    if (years && months) {
+      return `${years} ${yearText} ${months} ${monthText}`
+    } else if (years > 0) {
       return `${years} ${yearText}`
     } else if (months > 0) {
       return `${months} ${monthText}`

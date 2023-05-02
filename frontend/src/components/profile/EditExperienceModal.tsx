@@ -129,7 +129,7 @@ const EditExperienceModal: React.FC<Props> = ({ visible, mode, initialData, onCa
         }));
 
         if (isOnline) {
-          await v1Api.experience.updateOne(updatedData.id, updatedData);
+          v1Api.experience.updateOne(updatedData.id, updatedData);
           message.success("Update experience success");
         } else {
           const action: ActionType = {
